@@ -54,8 +54,8 @@ fi
 pip install -U pip setuptools wheel
 
 if [ "$CHECK_FORMATTING" = "1" ]; then
-    pip install black
-    if ! black --check --diff setup.py exceptiongroup; then
+    pip install black==20.8b1
+    if ! black --check --diff setup.py exceptiongroup docs; then
         cat <<EOF
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -63,7 +63,7 @@ if [ "$CHECK_FORMATTING" = "1" ]; then
 Formatting problems were found (listed above). To fix them, run
 
    pip install black
-   black setup.py exceptiongroup
+   black setup.py exceptiongroup docs
 
 in your local checkout.
 
